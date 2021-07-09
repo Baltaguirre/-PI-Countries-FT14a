@@ -1,14 +1,38 @@
-const { Activity,Country } = require('../db');
-const { ModelCrud } = require('./index.js');
-const {v4 : uuidv4}= require('uuid')
+
+const { Activity } = require("../db");
 
 
+class ModelCrud {
+    constructor(model) {
+        this.model = model;
+    }
+    getAll = (req, res, next) => {
+        return this.model.findAll()
+            .then((result) => res.send(result))
+            .catch((error) => next(error));
+    };
 
-class ActivityModel extends ModelCrud  {
-     constructor(model) {
-         super(model);
-     }
-     postActivities = (req, res, next) => {
+    getId = (req, res, next) => {
+        const id = req.params.id;
+        return this.model.findByPk(id)
+            .then((result) => res.send(result))
+            .catch((error) => next(error));
+
+    };
+
+    getName = (req, res, next) => {
+        const { name } = req.query
+        return this.model.findAll({
+            where: {
+                name
+            }
+        })
+            .then((result) => res.send(result))
+            .catch((error) => next(error));
+
+    };
+
+    postActivities = (req, res, next) => {
         const { name, dificulty, season, duration } = req.body;
         if (!name || !dificulty || !season || !duration) {
             res.status(404).send('Debes ingresar todas propiedades');
@@ -20,7 +44,7 @@ class ActivityModel extends ModelCrud  {
                 id: uuidv4()
             })
                 .then( async (activityCreated) => {
-                await activityCreated.addCountry()
+                await activityCreated.addCountry(this.model)
                 return activityCreated})
                 .then( async (activityCreated) =>{
                  const countryActivity = await Activity.findOne({
@@ -38,10 +62,11 @@ class ActivityModel extends ModelCrud  {
 
         
     };
-}
-
-const activitiesController = new ActivityModel(Activity);
+};
 
 
 
-module.exports = activitiesController;
+
+module.exports = {
+    ModelCrud
+};

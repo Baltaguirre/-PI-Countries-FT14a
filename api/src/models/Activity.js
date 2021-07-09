@@ -5,23 +5,23 @@ const {v4 : uuidv4} = require('uuid')
 module.exports = (sequelize) => {
   // defino el modelo
   return sequelize.define('activity', {
-    Id :{
+    id :{
       type: DataTypes.UUID,
       primaryKey: true,
       unique: true,
     },
-    Name:{
+    name:{
       type: DataTypes.STRING,
     },
-    Dificulty :{
+    dificulty :{
       type: DataTypes.INTEGER,   //(Entre 1 y 5)
      
     },                                            
-    Duration: {
+    duration: {
       type: DataTypes.INTEGER,
     
     },
-    Season:{
+    season:{
       type: DataTypes.STRING,    //(Verano, Otoño, Invierno o Primavera)
       
     }, 

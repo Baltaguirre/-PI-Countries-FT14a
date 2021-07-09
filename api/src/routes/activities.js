@@ -1,9 +1,13 @@
 const { Router } = require('express');
 const router = Router();
-const {postActivities, getActivitiesId} = require('../controllers/activities.js')
+const activitiesController = require('../controllers/activities');
 
 
-router.post('/', postActivities);
-router.get('/:id', getActivitiesId);
+
+
+
+
+router.post('/', activitiesController.postActivities);
+router.get('/:id', activitiesController.getId);
 
 module.exports = router;

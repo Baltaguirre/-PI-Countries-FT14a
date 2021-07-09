@@ -18,11 +18,34 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { conn, bulkCreateCountry } = require('./src/db.js');
+const force = false;
+
+
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
-  });
-});
+/*  conn.sync({ force }).then(() => {
+  
+  bulkCreateCountry().then(() => { 
+   
+    server.listen(3001, () => {
+      console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
+    });
+  })
+});  */
+
+ const initServer = () => {
+	server.listen(3001, () => {
+	      console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
+	});
+}
+
+conn.sync({ force }).then(() => {
+  if (force){
+  	bulkCreateCountry().then(() => { 
+		initServer();    
+	})
+  } else {
+  	initServer();
+  }});
+   
