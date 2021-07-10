@@ -17,21 +17,25 @@ class ActivityModel extends ModelCrud  {
             const newActivity = req.body;
             return this.model.create({
                 ...newActivity,
-                id: uuidv4()
-            })
+                id: uuidv4(), 
+                },
+                
+            )
                 .then( async (activityCreated) => {
-                await activityCreated.addCountry()
-                return activityCreated})
-                .then( async (activityCreated) =>{
+                console.log(activityCreated)
+                    await activityCreated.addCountries(req.body.countries)
+                return activityCreated
+            })
+               /*  .then( async (activityCreated) =>{
                  const countryActivity = await Activity.findOne({
                      where: {
                          id: activityCreated.id
                      },
-                     include: [this.model],
+                     include: [Country],
                  })
                 return countryActivity;
                 
-                })
+                }) */
                 .then((activityCreated) => res.send(activityCreated))
                 .catch((error) => next(error));
         }

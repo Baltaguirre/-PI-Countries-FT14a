@@ -1,4 +1,4 @@
-const { Country } = require('../db')
+const { Country, Activity } = require('../db')
 const { ModelCrud } = require('./index.js')
 const axios = require('axios')
 const { BASE_URL, ALL_COUNTRY_URL, NAME_COUNTRY_URL, ID_COUNTRY_URL } = require('../constants')
@@ -13,7 +13,7 @@ class CountryModel extends ModelCrud {
         if (req.query.name) {
             return this.getName(req, res, next)
         }
-        this.model.findAll()
+        this.model.findAll({include: Activity})
             .then((result) => {
                 
                 if (!result.length) {
