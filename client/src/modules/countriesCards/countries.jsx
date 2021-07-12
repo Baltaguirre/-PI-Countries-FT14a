@@ -1,26 +1,24 @@
-import {useState, useEffect} from 'react';
-import axios from 'axios';
-import { COUNTRIES_URL, NAME_COUNTRY_URL, ID_COUNTRY_URL } from '../../constanst';
+import { useEffect} from 'react';
+import {connect} from 'react-redux'
+import {getCountries} from '../../redux/actions'
 
 
- export default function AllCountriesCards (){
-    const [countries, setCountries] = useState([])
+  function AllCountriesCards ({countries, getCountries}){
     
-    function getCountries (){
-        return axios.get(COUNTRIES_URL)
-        .then(countries => setCountries(countries.data))
-    }
+    
+    
 
     useEffect(() => {
         getCountries()
-    }, [])
+        console.log(countries)
+    },[])
  
     return( 
         
     <div>{countries.map((country) => {
         return <div>
-            <p>{country.name}</p>
-            <p>{country.continent}</p>
+            <p>name:{country.name}</p>
+            <p>continent:{country.continent}</p>
             <img src={country.flag} alt='imagen de bandera de pais'/>
         </div>;
     })}</div>
@@ -28,3 +26,17 @@ import { COUNTRIES_URL, NAME_COUNTRY_URL, ID_COUNTRY_URL } from '../../constanst
 
 }
 
+const mapStateToProps = (state) => {
+    return {
+        countries: state.countries
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getCountries: countries => {
+            dispatch(getCountries(countries))
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AllCountriesCards)
