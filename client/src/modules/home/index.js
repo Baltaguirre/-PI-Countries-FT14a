@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { getCountries } from '../../redux/actions'
 import CountriesCards from '../countriesCards/countriesCards.js'
+import Searchbar from "../searchbar";
+import SearchBarActivity from "../activitiesCards/searchBarActivity";
 
 function Home({countries, getCountries}){
 useEffect(() => {
@@ -10,6 +12,8 @@ useEffect(() => {
 
 return (
     <div>
+        <SearchBarActivity  />
+        <Searchbar  />
         <CountriesCards countries={countries}/>
     </div>
 )

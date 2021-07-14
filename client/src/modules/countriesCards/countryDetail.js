@@ -4,30 +4,30 @@ import { connect } from 'react-redux';
 import { getCountryDetail } from '../../redux/actions';
 
 
-function CountryDetail({ match, country, getCountryDetail }) {
-console.log(country)
+function CountryDetail({ match, country, getCountryId }) {
+
     useEffect(() => {
-        
-        getCountryDetail(match.match.params.id)
-    })
+        getCountryId(match.match.params.id)
+    },[])
 
     return (
         <div>
             <div>
-                <h1>{country.name} ({country.id})</h1>
+                <h1>{country.name} </h1>
+                <h2>Código de país: {country.id}</h2>
             </div>
             <div>
                 <img src={country.flag} alt="Imagen de bandera rota" />
             </div>
-            <p>Capital:{country.capital}</p>
-            <p>Region:{country.region}</p>
-            <p>Subregion:{country.subregion}</p>
-            <p>Area:{country.area}km²</p>
-            <p>Population:{country.Population}</p>
-            <p>Ativities:{' '}
+            <p>Capital: {country.capital}</p>
+            <p>Region: {country.continent}</p>
+            <p>Subregion: {country.subregion}</p>
+            <p>Area: {country.area} km²</p>
+            <p>Population: {country.population}</p>
+            <p>Activities:{' '}
                 <div>
                     {
-                        country.Ativities ? country.Ativities.map((activity) => <span>{activity.name}</span>) : null
+                        country.activities ? country.activities.map((activity) => <span>{activity.name}</span>) : null
                     }
                 </div>
             </p>
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getCountryDetail: (countryId) => dispatch(getCountryDetail(countryId))
+        getCountryId: (countryId) => dispatch(getCountryDetail(countryId))
     }
 }
 

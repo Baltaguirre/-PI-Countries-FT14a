@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import { getCountryByName } from '../../redux/actions.js';
+import { getActivity } from '../../redux/actions.js';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
-import CountryName from '../countriesCards/countryName'
+import ActivityName from './activityName'
 
-function SearchBar({country, getCountryByName}) {
+function SearchBar({activity, getActivity}) {
     const[formActualState, setFormActualState] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false)
    
@@ -19,7 +19,7 @@ function SearchBar({country, getCountryByName}) {
 
     function handleSubmit(event){
         
-        getCountryByName(formActualState)
+        getActivity(formActualState)
         event.preventDefault()
        
     
@@ -34,21 +34,21 @@ function SearchBar({country, getCountryByName}) {
             <form onSubmit={handleSubmit}>
                 <input
                 type="text"
-                placeholder="Name (ex: Argentina, Brazil...)"
+                placeholder="Name (ex: Ski, Rappel...)"
                 value={formActualState}
                 onChange={handleChange}
                 ></input>
                
                 <button 
                 onClick={() => handleButtonClick()}
-                type="submit">BUSCAR PAÍS!
+                type="submit">BUSCAR ACTIVIDAD!
                 </button>
-                {buttonClicked ? <CountryName
-                name={country.name}
-                id={country.id}
-                flag={country.flag}
-                population={country.population}
-                continent={country.continent}
+                {buttonClicked ? <ActivityName
+                name={activity.name}
+                duration={activity.duration}
+                dificulty={activity.dificulty}
+                season={activity.season}
+                countries={activity.countries}
                 /> : null}
                
             </form>
@@ -61,13 +61,13 @@ function SearchBar({country, getCountryByName}) {
 
 const mapStateToProps = (state) => {
     return{
-        country: state.country,
+        activity: state.activity,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getCountryByName: name => {
-            dispatch(getCountryByName(name))
+        getActivity: name => {
+            dispatch(getActivity(name))
         }
     }
 }

@@ -11,21 +11,23 @@ const pages = Math.ceil(countries.length / countriesPerPage)
 const [currentPage, setCurrentPage] = useState(1)
 
 const showPages = (pageNum) => {
-    const index = pageNum === 0 ? pageNum + 1 * countriesPerPage : pageNum * countriesPerPage + 1;
-    setActualStateCountries(countries.slice(index - countriesPerPage, index));
+    const index =  pageNum * countriesPerPage + 1;
+  
+    setActualStateCountries(countries.slice(index - countriesPerPage - 1, index - 1));
     setCurrentPage(pageNum)
 }
 
 useEffect(() =>{
-showPages(0)
+showPages(1)
 }, [countries])
 
 return (
     <Fragment>
         <div>
-            <button onClick={() => showPages(currentPage >= 1 ? currentPage - 1 : currentPage)}>{`<`}</button>
-            <button onClick={() => showPages(currentPage < pages ? currentPage + 1 : currentPage)}>{`>`}</button>
+            <button onClick={() => showPages(currentPage > 1 ? currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
+            <button onClick={() => showPages(currentPage < pages ? currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
         </div>
+        <h1>Países del Mundo!</h1>
         <div>
             {actualStateCountries && actualStateCountries.map((country, i) => (
                 <div>
