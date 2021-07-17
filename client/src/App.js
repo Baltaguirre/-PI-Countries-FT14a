@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Fragment } from "react";
 import LandingPage from './modules/landing/index'
 import Home from './modules/home/index'
-import CountryName from './modules/countriesCards/countryName'
-import CountryDetail from './modules/countriesCards/countryDetail'
+import CountryName from './modules/countriesCards/name/countryName'
+import CountryDetail from './modules/countriesCards/detail/countryDetail'
 import ActivityPost from './modules/activitiesCards/postActivities'
 
 function App() {

@@ -3,8 +3,10 @@ import {
     GET_COUNTRIES_BY_NAME,
     GET_COUNTRY_DETAIL,
     GET_ACTIVITY,
+    GET_ALL_ACTIVITIES,
     ORDER_COUNTRIES,
-    POST_ACTIVITY
+    POST_ACTIVITY,
+    FILTER_COUNTRIES,
 } from './actions.js';
 
 const initialState = {
@@ -12,7 +14,8 @@ const initialState = {
     country: [],
     activity: {},
     formActivity:{},
-    countriesOrder: []
+    countriesOrder: [],
+    activities:[]
 };
 
 const reducer = (state = initialState, action) => {
@@ -38,10 +41,21 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 activity: action.payload,
             };
+            case GET_ALL_ACTIVITIES:
+            return {
+                ...state,
+                activities: action.payload,
+            };
         case ORDER_COUNTRIES:
             return {
                 ...state,
                 countries: action.payload,
+            };
+            case FILTER_COUNTRIES:
+            return {
+                ...state,
+                countries: action.payload,
+                
             };
         case POST_ACTIVITY:
             return {

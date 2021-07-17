@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { getCountryByName } from '../../redux/actions.js';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
-import CountryName from '../countriesCards/countryName'
+import CountryName from '../countriesCards/name/countryName'
 
 function SearchBar({country, getCountryByName}) {
     const[formActualState, setFormActualState] = useState('')

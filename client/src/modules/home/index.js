@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { getCountries } from '../../redux/actions'
-import CountriesCards from '../countriesCards/countriesCards.js'
+import CountriesCards from '../countriesCards/countries/countriesCards.js'
 import Searchbar from "../searchbar";
 import SearchBarActivity from "../activitiesCards/searchBarActivity";
 import CountriesAlphabeticOrder from "../filters/countryAlphabeticOrder";
@@ -34,7 +34,7 @@ return (
 }
 
 const mapStateToProps = (state) => {
-   console.log(state.countries)
+   
     return {
         countries :state.countries
     }

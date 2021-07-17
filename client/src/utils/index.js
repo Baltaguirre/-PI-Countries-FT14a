@@ -37,7 +37,19 @@
 }
 
 export async function filterContinentActivity(orderTarget, criteria) {
-
+let filteredCountries;
+if (criteria.continent){
+  filteredCountries = orderTarget.filter((countries) => 
+    countries.continent.includes(criteria.continent)
+  )
+} else {
+  if (criteria.activities){
+    filteredCountries = orderTarget.filter((countries) =>
+    countries.activities.name === criteria.activities)
+    
+  }
+}
+return filteredCountries;
 }  
 
 export function validate(input) {

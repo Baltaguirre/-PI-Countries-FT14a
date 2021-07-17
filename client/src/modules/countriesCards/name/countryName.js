@@ -10,7 +10,7 @@ export default function CountryName({name, id, flag, population, continent, onCl
             
             <div>
                 <button onClick={onClose}>X</button>
-            <Link to={`/CountryDetail/${id}`}>
+            <Link to={`/detail/${id}`}>
                 <img src={flag} alt={`Bandera de ${name}`}/>
                 </Link>
                 <div>

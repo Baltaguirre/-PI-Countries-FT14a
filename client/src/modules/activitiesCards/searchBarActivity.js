@@ -1,8 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { getActivity } from '../../redux/actions.js';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
 import ActivityName from './activityName'
 
 function SearchBar({ activity, getActivity }) {

@@ -1,11 +1,11 @@
 import React, {useState, useEffect, Fragment} from 'react';
-import CountryCard from './countryCard'
+import CountryCard from '../country/countryCard'
 import { connect } from 'react-redux';
 import styles from './styles.module.css'
 
 function CountriesCards({countries}){
 const [actualStateCountries, setActualStateCountries] = useState([])
-console.log(countries)
+
 const countriesPerPage = 10
 const pages = Math.ceil(countries.length / countriesPerPage)
 const [currentPage, setCurrentPage] = useState(1)
@@ -19,7 +19,7 @@ const showPages = (pageNum) => {
 
 
  useEffect(() =>{
-console.log('soy use effect')
+
     showPages(1)
  
 },[countries])
