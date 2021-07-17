@@ -24,12 +24,12 @@ function CountryDetail({ match, country, getCountryId }) {
             <p>Subregion: {country.subregion}</p>
             <p>Area: {country.area} km²</p>
             <p>Population: {country.population}</p>
-            <p>Activities:{' '}
-                <div>
+            <p>Activities:
+                
                     {
-                        country.activities ? country.activities.map((activity) => <span>{activity.name}</span>) : null
+                        country.activities ? country.activities.map((activity) => <ul>{activity.name}</ul> ) : null
                     }
-                </div>
+                
             </p>
         </div>
     )
@@ -37,6 +37,7 @@ function CountryDetail({ match, country, getCountryId }) {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.country)
     return {
         country: state.country,
     }

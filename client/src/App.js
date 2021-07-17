@@ -5,6 +5,8 @@ import LandingPage from './modules/landing/index'
 import Home from './modules/home/index'
 import CountryName from './modules/countriesCards/countryName'
 import CountryDetail from './modules/countriesCards/countryDetail'
+import ActivityPost from './modules/activitiesCards/postActivities'
+
 function App() {
   return (
 
@@ -12,7 +14,7 @@ function App() {
       <Router>
         <Switch>
 
-        <Route exact path="/">
+          <Route exact path="/">
             <LandingPage />
           </Route>
 
@@ -20,16 +22,21 @@ function App() {
             <Home />
           </Route>
 
+
+          <Route exact path="/createactivity">
+            <ActivityPost />
+          </Route>
+
+
+
           <Route exact path="/countryName?name=name"
             render={(match) => (
-
               <CountryName match={match}>
               </CountryName>
-
             )}
           ></Route>
 
-           <Route exact path="/CountryDetail/:id"
+          <Route exact path="/detail/:id"
             render={(match) => (
               <React.Fragment>
                 <CountryDetail match={match}>

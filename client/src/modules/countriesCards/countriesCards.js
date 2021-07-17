@@ -1,31 +1,37 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import CountryCard from './countryCard'
 import { connect } from 'react-redux';
+import styles from './styles.module.css'
 
-
- function CountriesCards({countries}){
+function CountriesCards({countries}){
 const [actualStateCountries, setActualStateCountries] = useState([])
-
+console.log(countries)
 const countriesPerPage = 10
 const pages = Math.ceil(countries.length / countriesPerPage)
 const [currentPage, setCurrentPage] = useState(1)
 
 const showPages = (pageNum) => {
-    const index =  pageNum * countriesPerPage + 1;
-  
+   const index =  pageNum * countriesPerPage + 1;
     setActualStateCountries(countries.slice(index - countriesPerPage - 1, index - 1));
     setCurrentPage(pageNum)
+    
 }
 
-useEffect(() =>{
-showPages(1)
-}, [countries])
 
+ useEffect(() =>{
+console.log('soy use effect')
+    showPages(1)
+ 
+},[countries])
+ 
 return (
-    <Fragment>
-        <div>
-            <button onClick={() => showPages(currentPage > 1 ? currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
-            <button onClick={() => showPages(currentPage < pages ? currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
+    <>
+        <div className={styles.countryCard}>
+        <button onClick={() => showPages(1)}>Order</button>
+            <button onClick={() => showPages(currentPage > 1 ?
+                 currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
+            <button onClick={() => showPages(currentPage < pages ?
+                 currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
         </div>
         <h1>Países del Mundo!</h1>
         <div>
@@ -43,14 +49,16 @@ return (
                 </div>
             ))}
         </div>
-        </Fragment>
+        </>
     )
  }
 
 
 const mapStateToProps = (state) => {
+   
     return {
-        countries: state.countries
+        countries: state.countries,
+     
     }
 }
 

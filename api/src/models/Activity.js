@@ -1,3 +1,4 @@
+const Sequelize = require('Sequelize')
 const { DataTypes } = require('sequelize');
 const {v4 : uuidv4} = require('uuid')
 // Exportamos una funcion que define el modelo
@@ -12,6 +13,7 @@ module.exports = (sequelize) => {
     },
     name:{
       type: DataTypes.STRING,
+     
     },
     dificulty :{
       type: DataTypes.INTEGER,   //(Entre 1 y 5)
@@ -25,5 +27,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,    //(Verano, Otoño, Invierno o Primavera)
       
     }, 
+    
+    
   });
 };

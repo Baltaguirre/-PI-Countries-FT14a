@@ -8,10 +8,16 @@ import CountryName from '../countriesCards/countryName'
 function SearchBar({country, getCountryByName}) {
     const[formActualState, setFormActualState] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false)
-   
+    const[countryNameButtonClose, setCountryNameButtonClose] = useState(true)
+
+
+    function handleCountryNameButtonClose(){
+        setCountryNameButtonClose(false)
+    }
    
     function handleButtonClick() {
         setButtonClicked(true)
+        setCountryNameButtonClose(true)
    }
     function handleChange(event){
         setFormActualState(event.target.value)
@@ -49,6 +55,8 @@ function SearchBar({country, getCountryByName}) {
                 flag={country.flag}
                 population={country.population}
                 continent={country.continent}
+                onClose={handleCountryNameButtonClose}
+                countryNameButtonClose={countryNameButtonClose}
                 /> : null}
                
             </form>

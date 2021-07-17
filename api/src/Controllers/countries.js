@@ -39,14 +39,13 @@ class CountryModel extends ModelCrud {
     getName = (req, res, next) => {
 
         const { name } = req.query
-        let procesName = [name, name.toUpperCase(), name.toLowerCase()]
+        let procesName =  name.toUpperCase()
         return this.model.findOne({
-            where: {
-                name
-            },
-
-        })
-            .then((result) => {
+            where : {
+                 name
+             },
+          })
+         .then((result) => {
                 if (!result) {
 
                     res.status(404).send('El pais no fue encontrado')
