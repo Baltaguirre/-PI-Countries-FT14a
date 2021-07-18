@@ -1,42 +1,37 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getCountries } from '../../redux/actions'
 import CountriesCards from '../countriesCards/countries/countriesCards.js'
 import Searchbar from "../searchbar";
 import SearchBarActivity from "../activitiesCards/searchBarActivity";
 import CountriesAlphabeticOrder from "../filters/countryAlphabeticOrder";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './styles.module.css'
+import Nav from '../navBar/index.js'
 
-
-function Home({countries, getCountries}){
+function Home({ countries, getCountries }) {
 
 
     useEffect(() => {
-    getCountries()
-},[])
+        getCountries()
+    }, [])
 
-return (
-    <div className={styles.countryCard}>
-        <div className={styles.countryCard}>
-       <Link to ={"/createactivity"}>
-       <button>crear actividad</button>
-       </Link>
-       </div>   
-        <SearchBarActivity  />
-        <Searchbar  />
-        <CountriesAlphabeticOrder />
-        <CountriesCards countries={countries}/>
-    </div>
-)
+    return (
+        <div className={styles.container}>
+            <div >
+                <Nav />
+            </div>
+            <CountriesCards countries={countries} />
+        </div>
+    )
 
 
 }
 
 const mapStateToProps = (state) => {
-   
+    console.log(state.countries)
     return {
-        countries :state.countries
+        countries: state.countries
     }
 }
 

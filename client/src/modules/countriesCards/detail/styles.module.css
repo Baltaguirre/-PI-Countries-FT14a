@@ -1,0 +1,36 @@
+.countryCard{
+	
+    margin: 30px auto;
+	margin-top: 130px;
+    margin-left: 450px;
+    width: 30%;
+	height: 60%;
+	border-radius: 10px;
+    box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
+	transition: 0.8s;
+	background-color:rgba(221, 208, 208, 0.5);
+    display: flex;
+	align-items:center;
+	justify-content: space-around;
+	flex-direction:row-reverse;
+	flex-wrap: wrap;
+   position:fixed;
+}
+
+.countryCard img {
+	width: 140px;
+	height:110px;
+	
+}
+
+.container{
+    background-image:url('../../../img/clear-blue-sky.jpeg');
+	background-size:cover;
+    background-repeat:round;
+    height: 625px;
+}
+
+.info{
+    color:rgb(83, 75, 75);
+    font-weight: bold;
+}

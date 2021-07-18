@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getCountryDetail } from '../../../redux/actions';
-
+import styles from './styles.module.css'
 
 function CountryDetail({ match, country, getCountryId }) {
 
@@ -11,7 +11,8 @@ function CountryDetail({ match, country, getCountryId }) {
     },[])
 
     return (
-        <div>
+        <div className={styles.container}>
+        <div className={styles.countryCard}>
             <div>
                 <h1>{country.name} </h1>
                 <h2>Código de país: {country.id}</h2>
@@ -19,18 +20,17 @@ function CountryDetail({ match, country, getCountryId }) {
             <div>
                 <img src={country.flag} alt="Imagen de bandera rota" />
             </div>
+            <div className={styles.info}>
             <p>Capital: {country.capital}</p>
             <p>Region: {country.continent}</p>
             <p>Subregion: {country.subregion}</p>
             <p>Area: {country.area} km²</p>
             <p>Population: {country.population}</p>
-            <p>Activities:
-                
-                    {
-                        country.activities ? country.activities.map((activity) => <ul>{activity.name}</ul> ) : null
-                    }
+            <p>Activities: {country.activities ? country.activities.map((activity) => '«' + activity.name + '» ' ) : null}
                 
             </p>
+            </div>
+        </div>
         </div>
     )
 

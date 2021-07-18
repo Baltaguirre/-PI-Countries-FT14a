@@ -4,7 +4,7 @@ import { getActivity } from '../../redux/actions.js';
 import { connect } from 'react-redux';
 import ActivityName from './activityName'
 
-function SearchBar({ activity, getActivity }) {
+function SearchBarActivity({ activity, getActivity }) {
     const [formActualState, setFormActualState] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false)
     const [activityNameButtonClose, setActivityNameButtonClose] = useState(true)
@@ -75,4 +75,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBarActivity)

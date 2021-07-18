@@ -1,35 +1,55 @@
-
-
 .countryCard{
 	
-    margin: 30px auto;
-	width: 25%;
-	height: 5%;
+    
+	margin-top: 0px;
+    margin-left: 0px;
+    width: 350%;
+	height: 80%;
 	border-radius: 10px;
     box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
-	cursor: pointer;
-		transition: 0.8s;
-	min-height: 20px;
+	transition: 0.8s;
+	background-color:rgba(197, 221, 231, 0.5);
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-direction:row-reverse;
-
+	align-items:center;
+	justify-content: space-around;
+	flex-direction:row;
+	flex-wrap: wrap;
+	
 }
 
 .countryCard img {
-	max-width: 420px;
-	min-width: 20px;
-	max-height:100px;
-	min-height: 30px;
+	width: 85px;
+	height:50px;
+	
 }
 
 .container{
-    padding: 0.9rem 0.4rem 0.4rem ;
-	width: 100%;
-	display: flex;
-	flex-flow:row;
-	justify-self:flex-end;
-	align-items:flex-end;
-	justify-content:space-around;
+    padding: 5%;
+	width: 80%;
+	margin-top: 0px;
+	height: 100%;
+	margin-left: 0px;
+	display: grid;
+	grid-template-columns: [first] 50px [line2] 50px [line3] 50px[col4-start] 50px [five] 50px [end];
+	grid-template-rows: [row1-start] 55% [row1-end] 55% [third-line] 55% [last-line];
+	justify-self:auto;
+	align-items:center;
+	justify-content:space-between;
+	
+}
+
+.btn{
+	width: 1320px;
+	height:15px;
+	margin-left:10px;
+	margin-right:50px;
+	display: grid;
+	grid-template-columns: [first] 180px [line2] 110px [line3] 180px;
+	grid-template-rows: [row1-start] 280% [row1-end] 85% [third-line] 85%;
+	align-items:center;
+	justify-content:space-between;
+}
+
+.btnOrder{
+	margin-left:640px;
 }

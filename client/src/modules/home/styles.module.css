@@ -1,6 +1,7 @@
-.countryCard{
+.container{
    
 	background-image:url('../../img/sunSky.jpg');
 	background-size:cover;
-    background-repeat: no-repeat;
+    background-repeat:round;
+    
 }

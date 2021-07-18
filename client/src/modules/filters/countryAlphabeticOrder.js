@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './styles.module.css'
 import { orderCountries, getCountries, filterCountries } from '../../redux/actions';
 import { connect } from 'react-redux'
 
@@ -48,7 +48,7 @@ function CountriesAlphabeticOrder({
     }
 
     return (
-        <div>
+        <div className={styles.filters}>
             <div>
                 <label>Ordenar Países por Nombre</label>
                 <select onChange={handleName}>

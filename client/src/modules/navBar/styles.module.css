@@ -1,0 +1,30 @@
+.navBar{
+    border-radius: 10px;
+    
+	background-color:rgba(160, 169, 173, 0.5);
+ 
+
+}
+
+.search{
+    margin-left:10px;
+    margin-right:50px;
+    margin-top: 10px;
+    width: 1330px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+.filters{
+    width: 1330px;
+    margin-left:10px;
+    margin-right:50px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-content: flex start;
+    justify-content:space-between;
+}
