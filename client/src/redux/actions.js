@@ -63,6 +63,7 @@ export function getAllActivities() {
     return function (dispatch) {
         return axios.get(`http://localhost:3001/activities/`)
             .then((response) => {
+               console.log(response)
                 dispatch({
                     type: GET_ALL_ACTIVITIES,
                     payload: response.data

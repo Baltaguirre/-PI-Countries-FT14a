@@ -1,0 +1,35 @@
+
+.searchcountry searchCountry{
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.searchCountry{
+    width: 200px;
+    height: 30px;
+    background: #dee2eb;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #63717f;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 15px;
+}
+
+.btn{
+    width: 130px;
+    height: 30px;
+    background-color:rgba(221, 208, 208, 0.5);
+    border: 15px;
+
+    font-size: 10pt;
+    float: left;
+    color: rgba(78, 79, 151, 0.5);
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 15px;
+}

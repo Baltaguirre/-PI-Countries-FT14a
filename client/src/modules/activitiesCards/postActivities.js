@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getCountries, postActivity } from '../../redux/actions';
+import { getCountries, postActivity, getAllActivities } from '../../redux/actions';
 import { useState, useEffect } from 'react'
 import { validate } from '../../utils/index'
-
+import styles from './styles.module.css'
 
 
 function ActivityPost({ countries, activityPost, getAllCountries }) {
@@ -65,15 +65,16 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
  function handleSubmit(event){
   event.preventDefault();
   activityPost(input)
-  console.log(input)
+
 } 
 
  
 
   //render
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <div className={styles.container}>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.elements}>
         <label>Actividad:</label>
         <input className={errors.name && 'danger'}
           name="name"
@@ -87,6 +88,8 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
       </div>
       <div>
         <label>Temporada:</label>
+        </div>
+        <div>
         <select onChange={handleInputChange} name="season">
           <option value={input.season} >
             {"Elegir"}
@@ -101,6 +104,8 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
 
       <div>
         <label>Dificultad:</label>
+        </div>
+        <div>
         <select onChange={handleInputChange} name="dificulty">
           <option value={input.dificulty} >
             {"Elegir"}
@@ -116,6 +121,8 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
 
       <div>
         <label>Duración:</label>
+        </div>
+        <div>
         <input className={errors.duration && 'danger'}
           name="duration"
           type="number"
@@ -126,8 +133,8 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
           <p className="danger">{errors.duration}</p>
         )}
       </div>
-      <label>País:</label>
-      <select onChange={handleCountriesSelection}>
+      
+      <select className={styles.countrySelector} onChange={handleCountriesSelection}>
               <option value="" >
                 Elige tu País o Países!
               </option>
@@ -146,6 +153,7 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
       <input type="submit" value="Submit" />
 
     </form>
+    </div>
   )
 }
 
@@ -159,7 +167,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     activityPost: (activity) => dispatch(postActivity(activity)),
-    getAllCountries: () => dispatch(getCountries())
+    getAllCountries: () => dispatch(getCountries()),
+    getAllActivities : () => dispatch( getAllActivities()),
   }
 }
 

@@ -44,10 +44,9 @@ if (criteria.continent){
   )
 } else {
   if (criteria.activities){
-    filteredCountries = orderTarget.filter((countries) =>
-    countries.activities.name === criteria.activities)
-    
-  }
+    filteredCountries = orderTarget.filter((country) =>
+    country.activities.filter((activity) => activity.name === criteria.activities).length)
+    }
 }
 return filteredCountries;
 }  

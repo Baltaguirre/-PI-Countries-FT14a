@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { getCountryByName } from '../../redux/actions.js';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom'
+import styles from './styles.module.css'
 import CountryName from '../countriesCards/name/countryName'
 
 function SearchBar({country, getCountryByName}) {
@@ -37,15 +37,15 @@ function SearchBar({country, getCountryByName}) {
     return (
     
         <div>
-            <form onSubmit={handleSubmit}>
-                <input
+            <form  onSubmit={handleSubmit}>
+                <input className={styles.searchCountry}
                 type="text"
                 placeholder="Name (ex: Argentina, Brazil...)"
                 value={formActualState}
                 onChange={handleChange}
                 ></input>
                
-                <button 
+                <button className={styles.btn}
                 onClick={() => handleButtonClick()}
                 type="submit">BUSCAR PAÍS!
                 </button>

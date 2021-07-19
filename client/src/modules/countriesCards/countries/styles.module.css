@@ -39,17 +39,27 @@
 }
 
 .btn{
-	width: 1320px;
-	height:15px;
-	margin-left:10px;
-	margin-right:50px;
-	display: grid;
-	grid-template-columns: [first] 180px [line2] 110px [line3] 180px;
-	grid-template-rows: [row1-start] 280% [row1-end] 85% [third-line] 85%;
-	align-items:center;
-	justify-content:space-between;
+    width: 130px;
+    height: 30px;
+    background-color:rgba(58, 55, 230, 0.527);
+    border: 5px;
+
+    font-size: 10pt;
+    float: left;
+    color: rgba(7, 7, 10, 0.5);
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 15px;
 }
 
-.btnOrder{
-	margin-left:640px;
+.searchContainer{
+	margin-top: 20px;
+	height:30px;
+	width:1300px;
+	display: flex;
+	align-items:center;
+	justify-content: space-around;
+	flex-direction:row;
+	
 }

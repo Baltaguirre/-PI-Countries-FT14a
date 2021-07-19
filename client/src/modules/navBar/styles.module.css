@@ -20,11 +20,12 @@
 
 .filters{
     width: 1330px;
-    margin-left:10px;
+    margin-left:70px;
     margin-right:50px;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
-    align-content: flex start;
-    justify-content:space-between;
+    
+    justify-content:space-around;
+   
 }

@@ -3,13 +3,15 @@ import { useState } from 'react';
 import { getActivity } from '../../redux/actions.js';
 import { connect } from 'react-redux';
 import ActivityName from './activityName'
+import styles from './styles.module.css'
+
 
 function SearchBarActivity({ activity, getActivity }) {
     const [formActualState, setFormActualState] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false)
     const [activityNameButtonClose, setActivityNameButtonClose] = useState(true)
 
-    function handleActivityNameButtonClose(){
+    function handleActivityNameButtonClose() {
         setActivityNameButtonClose(false)
     }
 
@@ -26,23 +28,22 @@ function SearchBarActivity({ activity, getActivity }) {
         event.preventDefault()
     }
 
-   
+
 
     return (
 
         <div>
             <form onSubmit={handleSubmit}>
-                <input
+                <button className={styles.btn}
+                    onClick={() => handleButtonClick()}
+                    type="submit">BUSCAR ACTIVIDAD!
+                </button>
+                <input className={styles.searchActivity}
                     type="text"
                     placeholder="Name (ex: Ski, Rappel...)"
                     value={formActualState}
                     onChange={handleChange}
                 ></input>
-
-                <button
-                    onClick={() => handleButtonClick()}
-                    type="submit">BUSCAR ACTIVIDAD!
-                </button>
                 {buttonClicked ? <ActivityName
                     name={activity.name}
                     duration={activity.duration}
@@ -51,7 +52,7 @@ function SearchBarActivity({ activity, getActivity }) {
                     countries={activity.countries}
                     onClose={handleActivityNameButtonClose}
                     activityNameButtonClose={activityNameButtonClose}
-                /> : null }
+                /> : null}
 
             </form>
         </div>

@@ -44,42 +44,42 @@ function CountriesAlphabeticOrder({
     }
     function handleFilterActivities(event) {
         filterCountries2(countriesOrder, { activities: event.target.value })
-        console.log( countriesOrder)
+        console.log(countriesOrder)
     }
 
     return (
         <div className={styles.filters}>
             <div>
-                <label>Ordenar Países por Nombre</label>
-                <select onChange={handleName}>
-                    <option label='Select' value='Name'></option>
+                
+                <select className={styles.select} onChange={handleName}>
+                    <option label='Ordenar Paises por nombre' value='Name'></option>
                     <option value='Ascendent'>Ascendent</option>
                     <option value='Descendent'>Descendent</option>
                 </select>
 
             </div>
             <div>
-                <label>Ordenar Países por Poblacion</label>
-                <select onChange={handlePupulation}>
-                    <option label='Select' value='Population'></option>
+                
+                <select className={styles.select} onChange={handlePupulation}>
+                    <option label='Ordenar Países por Poblacion' value='Population'></option>
                     <option value='Ascendent' label='Ascendent'></option>
                     <option value='Descendent' label='Descendent'></option>
                 </select>
 
             </div>
             <div>
-                <label>Ordenar Países por Continente</label>
-                <select onChange={handleContinent}>
-                    <option label='Select' value='Continent'></option>
+             
+                <select className={styles.select}onChange={handleContinent}>
+                    <option label='Ordenar Países por Continente' value='Continent'></option>
                     <option value='Ascendent' label='Ascendent'></option>
                     <option value='Descendent' label='Descendent'></option>
                 </select>
 
             </div>
             <div>
-                <label>Filtrar Países por Continente </label>
-                <select onChange={handleFilterCountries}>
-                    <option label='Select' value='continentFilter'></option>
+                
+                <select className={styles.select} onChange={handleFilterCountries}>
+                    <option label='Filtrar Países por Continente' value='continentFilter'></option>
                     <option value='Americas' label='America'></option>
                     <option value='Africa' label='Africa'></option>
                     <option value='Asia' label='Asia'></option>
@@ -90,11 +90,12 @@ function CountriesAlphabeticOrder({
 
             </div>
             <div>
-                <label>Filtrar Países por Actividad Turística </label>
-                <select onChange={handleFilterActivities}>
-                    <option label='Select' value='activityFilter'></option>
-                    
-                    <option value='ski' label='ski'></option>
+                <select className={styles.select} onChange={handleFilterActivities}>
+                    <option key="-1" label='Filtrar Países por Actividad Turística' value='activityFilter'></option>
+                    {activities.length ? activities.map((activity , i) => (
+                        <option key={i} value={activity.name} label={activity.name}></option>
+                    )): null}
+                   
     
                 </select>
 
@@ -106,11 +107,12 @@ function CountriesAlphabeticOrder({
 
 
 const mapStateToProps = ((state) => {
-console.log(state.countries)
+console.log(state.activities)
     return {
         countries: state.countries,
         countriesOrder: state.countriesOrder,
         activities: state.activities,
+       
     }
 })
 

@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
         case ORDER_COUNTRIES:
             return {
                 ...state,
-                countries: action.payload,
+                countries: action.payload.slice(),  //devuelvo una copia de la lista
             };
             case FILTER_COUNTRIES:
             return {
@@ -61,6 +61,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 formActivity: action.payload,
+                activities: state.activites.concat(action.payload),
             };
         default:
             return {

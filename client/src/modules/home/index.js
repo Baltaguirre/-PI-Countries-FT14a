@@ -1,19 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getCountries } from '../../redux/actions'
+import { getCountries,getAllActivities } from '../../redux/actions'
 import CountriesCards from '../countriesCards/countries/countriesCards.js'
-import Searchbar from "../searchbar";
-import SearchBarActivity from "../activitiesCards/searchBarActivity";
-import CountriesAlphabeticOrder from "../filters/countryAlphabeticOrder";
-import { Link } from 'react-router-dom';
+
 import styles from './styles.module.css'
 import Nav from '../navBar/index.js'
 
-function Home({ countries, getCountries }) {
+function Home({ countries, getCountries, getAllActivities }) {
 
 
     useEffect(() => {
         getCountries()
+        getAllActivities()
     }, [])
 
     return (
@@ -38,6 +36,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getCountries: () => dispatch(getCountries()),
+        getAllActivities: () => dispatch(getAllActivities())
     }
 }
 

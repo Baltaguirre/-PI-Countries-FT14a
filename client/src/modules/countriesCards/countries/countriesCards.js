@@ -27,20 +27,21 @@ function CountriesCards({ countries }) {
 
     return (
         <>
-            <div className={styles.btnOrder}>
-                <button onClick={() => showPages(1)}>Order</button>
-            </div>
-            <div className={styles.btn}>
-                <button onClick={() => showPages(currentPage > 1 ?
+          
+            <div>
+                <div className={styles.searchContainer}>
+                <button  className={styles.btn} onClick={() => showPages(currentPage > 1 ?
                     currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
                 <div>
                     <Link to={"/createactivity"}>
-                        <button>crear actividad</button>
+                        <button className={styles.btn}>crear actividad</button>
                     </Link>
                 </div>
+                
 
-                <button onClick={() => showPages(currentPage < pages ?
+                <button className={styles.btn} onClick={() => showPages(currentPage < pages ?
                     currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
+            </div>
             </div>
             <div className={styles.container}>
                 {actualStateCountries && actualStateCountries.map((country, i) => (
