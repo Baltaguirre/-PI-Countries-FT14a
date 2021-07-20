@@ -1,12 +1,12 @@
 .landing{
-    background:url('../../img/countries4.png');
+    background:url('../../img/planetita_mano.jpg');
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    align-items:space-between;
+    align-items:space-around;
     
 
 }

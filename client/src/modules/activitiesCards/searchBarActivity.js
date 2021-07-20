@@ -34,16 +34,18 @@ function SearchBarActivity({ activity, getActivity }) {
 
         <div>
             <form onSubmit={handleSubmit}>
-                <button className={styles.btn}
+            <button className={styles.btn}
                     onClick={() => handleButtonClick()}
                     type="submit">BUSCAR ACTIVIDAD!
                 </button>
-                <input className={styles.searchActivity}
+               <input className={styles.searchActivity}
                     type="text"
                     placeholder="Name (ex: Ski, Rappel...)"
                     value={formActualState}
                     onChange={handleChange}
                 ></input>
+              
+                
                 {buttonClicked ? <ActivityName
                     name={activity.name}
                     duration={activity.duration}

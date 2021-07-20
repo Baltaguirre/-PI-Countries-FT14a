@@ -4,7 +4,7 @@ import { getCountries, postActivity, getAllActivities } from '../../redux/action
 import { useState, useEffect } from 'react'
 import { validate } from '../../utils/index'
 import styles from './styles.module.css'
-
+import {Link} from 'react-router-dom'
 
 function ActivityPost({ countries, activityPost, getAllCountries }) {
   const [input, setInput] = useState({
@@ -72,27 +72,31 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
 
   //render
   return (
-    <div className={styles.container}>
+    <div>
+      <div className={styles.container}>
+    <Link to={'/home'} className={styles.btnHome}>Home </Link>
+     {/* <button  className={styles.btnHome}><Link to={'/home'}>Home </Link></button> */}
+   
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.elements}>
-        <label>Actividad:</label>
-        <input className={errors.name && 'danger'}
+       
+        <input  className={styles.select}
           name="name"
           type="text"
           value={input.name}
           onChange={handleInputChange}
-          placeholder="Nombre" />
+          placeholder="Actividad" />
         {errors.name && (
           <p className="danger">{errors.name}</p>
         )}
       </div>
       <div>
-        <label>Temporada:</label>
+      
         </div>
         <div>
-        <select onChange={handleInputChange} name="season">
+        <select className={styles.selectSeason} onChange={handleInputChange} name="season">
           <option value={input.season} >
-            {"Elegir"}
+            {"Elegir Termporada"}
           </option>
           <option value="verano">Verano</option>
           <option value="otoño">Otoño</option>
@@ -103,12 +107,12 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
       </div>
 
       <div>
-        <label>Dificultad:</label>
+        
         </div>
         <div>
-        <select onChange={handleInputChange} name="dificulty">
+        <select className={styles.selectDifficulty} onChange={handleInputChange} name="dificulty">
           <option value={input.dificulty} >
-            {"Elegir"}
+            {"Elegir Dificultad"}
           </option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -120,22 +124,22 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
       </div>
 
       <div>
-        <label>Duración:</label>
+       
         </div>
         <div>
-        <input className={errors.duration && 'danger'}
+        <input className={styles.select} /* className={errors.duration && 'danger'} */
           name="duration"
           type="number"
           value={input.duration}
           onChange={handleInputChange}
-          placeholder="En horas" />
+          placeholder="Duración en Horas" />
         {errors.duration && (
           <p className="danger">{errors.duration}</p>
         )}
       </div>
       
-      <select className={styles.countrySelector} onChange={handleCountriesSelection}>
-              <option value="" >
+      <select className={styles.selectCountry} onChange={handleCountriesSelection}>
+              <option  value="" >
                 Elige tu País o Países!
               </option>
               {countries &&
@@ -143,16 +147,17 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
                   return <option value={item.id}>{item.name}</option>;
                 })}
             </select>
-      <input
+      <input className={styles.inputCountry}
         name="countries"
         type="text"
         value={input.countries}
         onChange={handleInputChange}
         placeholder="País" />
 
-      <input type="submit" value="Submit" />
+      <input className={styles.btnCrear} onClick={() => alert('Actividad creada con éxito')} type="submit" value="Crear Actividad Turística" />
 
     </form>
+    </div>
     </div>
   )
 }

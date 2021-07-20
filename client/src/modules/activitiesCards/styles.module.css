@@ -1,5 +1,5 @@
 .container{
-    background-image:url('../../img/trekking-activity.jpg.crdownload');
+    background-image:url('../../img/trekking4.jpg');
     background-size:cover;
     background-repeat:round;
     height: 625px;
@@ -7,22 +7,23 @@
 
 .form{
     margin: 30px auto;
-	margin-top: 130px;
-    margin-left: 450px;
-    width: 30%;
-	height: 60%;
+	margin-top: 30px;
+    margin-left: 700px;
+    width: 300px;
+	height: 80%;
 	border-radius: 10px;
     box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
 	transition: 0.8s;
 	background-color:rgba(182, 153, 153, 0.5);
     display: flex;
-	align-items:center;
-	justify-content: space-between;
+	align-items:flex-start;
+	justify-content: space-around;
 	flex-direction:column;
 	flex-wrap: wrap;
-   position:fixed;
+    position:fixed;
 }
 .elements{
+    
     display: flex;
 	align-items:center;
     flex-direction:column;
@@ -39,7 +40,7 @@
     background: #dee2eb;
     border: none;
     font-size: 10pt;
-    float: left;
+    float: right;
     color: #63717f;
     padding-left: 45px;
     -webkit-border-radius: 5px;
@@ -52,12 +53,186 @@
     height: 30px;
     background-color:rgba(221, 208, 208, 0.5);
     border: 15px;
-
     font-size: 10pt;
-    float: left;
     color: rgba(78, 79, 151, 0.5);
     padding-left: 45px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 15px;
 }
+
+.activityName{
+    
+	margin-top: 10px;
+    margin-left: 40px;
+    width: 55%;
+	height: 35%;
+	border-radius: 10px;
+    box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
+	transition: 0.8s;
+	background-color:rgba(182, 153, 153, 0.5);
+   display: flex;
+   flex-direction: column ;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.btnHome{
+    font-family:monospace;
+    text-decoration: none;
+    margin-left:145px;
+    width: 130px;
+    height: 40px;
+    background-color:rgba(37, 24, 24, 0.801);
+    border: 15px;
+    font-size: 20pt;
+    color: rgba(234, 234, 240, 0.801);
+    padding-left: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 15px;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.select{
+    
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin-left:60px;
+        width: 150px;
+        cursor: pointer;
+          padding: 7px 10px;
+          height: 22px;
+          outline: 0; 
+          border: 20%;
+        background: #f0f0f0;
+        color: #f30000;
+        font-size: 1em;
+        color: rgb(95, 90, 90);
+        font-family: 
+        'Quicksand',  Tahoma, sans-serif;
+        border:2px solid rgba(8, 7, 7, 0.527);
+        border-radius: 12px;
+        
+        transition: all 0.25s ease;
+    }
+    
+    .select select::-ms-expand{
+        display:none;
+    }
+
+    
+    .selectSeason{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 7px 10px;
+        width: 180px;
+        height: 42px;
+        margin-left:60px;
+        cursor: pointer;
+        outline: 0; 
+        border: 20%;
+        background: #f0f0f0;
+        color: #f30000;
+        font-size: 1em;
+        color: rgb(95, 90, 90);
+        font-family: 
+        'Quicksand',  Tahoma, sans-serif;
+        border:2px solid rgba(8, 7, 7, 0.527);
+        border-radius: 12px;
+        
+        transition: all 0.25s ease;
+    }
+    
+    .selectSeason selectSeason::-ms-expand{
+        display:none;
+    }
+
+    .btnCrear{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin-left:30px;
+        width: 250px;
+        height: 42px;
+        cursor: pointer;
+        padding: 7px 10px;
+        outline: 0; 
+        border: 20%;
+        background: #f0f0f0;
+        color: #f30000;
+        font-size: 1em;
+        color: rgb(95, 90, 90);
+        font-family: 
+        'Quicksand',  Tahoma, sans-serif;
+        border:2px solid rgba(8, 7, 7, 0.527);
+        border-radius: 12px;
+    }
+
+    .selectDifficulty{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 150px;
+        margin-left:75px;
+        cursor: pointer;
+          padding: 7px 10px;
+          height: 42px;
+          outline: 0; 
+          border: 20%;
+        background: #f0f0f0;
+        color: #f30000;
+        font-size: 1em;
+        color: rgb(95, 90, 90);
+        font-family: 
+        'Quicksand',  Tahoma, sans-serif;
+        border:2px solid rgba(8, 7, 7, 0.527);
+        border-radius: 12px;
+    }
+
+    .selectCountry{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 180px;
+        margin-left:60px;
+        cursor: pointer;
+          padding: 7px 10px;
+          height: 42px;
+          outline: 0; 
+          border: 20%;
+        background: #f0f0f0;
+        color: #f30000;
+        font-size: 1em;
+        color: rgb(95, 90, 90);
+        font-family: 
+        'Quicksand',  Tahoma, sans-serif;
+        border:2px solid rgba(8, 7, 7, 0.527);
+        border-radius: 12px;
+    }
+
+    .inputCountry{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin-left:70px;
+        width: 130px;
+        cursor: pointer;
+          padding: 7px 10px;
+          height: 25px;
+          outline: 0; 
+          border: 20%;
+        background: #f0f0f0;
+        color: #f30000;
+        font-size: 1em;
+        color: rgb(95, 90, 90);
+        font-family: 
+        'Quicksand',  Tahoma, sans-serif;
+        border:2px solid rgba(8, 7, 7, 0.527);
+        border-radius: 12px
+    }

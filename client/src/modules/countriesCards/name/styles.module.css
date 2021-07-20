@@ -1,27 +1,28 @@
 
 
 .countryName{
-	
+	margin-top: 10px;
     margin: 30px auto;
-	width: 25%;
-	height: 5%;
+    margin-left:80px;
+	width: 55%;
+	height: 300px;
 	border-radius: 10px;
     box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
 	cursor: pointer;
-		transition: 0.8s;
+	transition: 0.8s;
 	min-height: 20px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	flex-direction:row-reverse;
+	justify-content: space-around;
+	flex-direction:column;
 
 }
 
-.countryCard img {
-	max-width: 420px;
-	min-width: 20px;
-	max-height:100px;
-	min-height: 30px;
+.countryName img {
+	width: 120px;
+
+	height:100px;
+	
 }
 
 .container{

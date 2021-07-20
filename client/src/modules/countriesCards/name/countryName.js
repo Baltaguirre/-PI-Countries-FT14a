@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import styles from './styles.module.css'
 
 export default function CountryName({name, id, flag, population, continent, onClose, countryNameButtonClose}) {
     
@@ -8,7 +8,7 @@ export default function CountryName({name, id, flag, population, continent, onCl
         <div>
             {countryNameButtonClose ?
             
-            <div>
+            <div className={styles.countryName}>
                 <button onClick={onClose}>X</button>
             <Link to={`/detail/${id}`}>
                 <img src={flag} alt={`Bandera de ${name}`}/>

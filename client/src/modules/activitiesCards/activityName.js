@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './styles.module.css'
 
 export default function ActivityName({name, duration, dificulty, season, countries, onClose, activityNameButtonClose}) {
     
@@ -11,8 +11,9 @@ export default function ActivityName({name, duration, dificulty, season, countri
 
    return (
         <div>
+             
              {activityNameButtonClose ?
-             <div>
+             <div className={styles.activityName}>
                   
                   <button onClick={onClose}>X</button>
                   

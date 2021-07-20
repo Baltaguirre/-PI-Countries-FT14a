@@ -61,7 +61,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 formActivity: action.payload,
-                activities: state.activites.concat(action.payload),
+                activities: state.activities.concat(action.payload),
             };
         default:
             return {

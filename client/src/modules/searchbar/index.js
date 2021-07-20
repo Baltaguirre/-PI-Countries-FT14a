@@ -37,14 +37,17 @@ function SearchBar({country, getCountryByName}) {
     return (
     
         <div>
+           
             <form  onSubmit={handleSubmit}>
+            
                 <input className={styles.searchCountry}
                 type="text"
                 placeholder="Name (ex: Argentina, Brazil...)"
                 value={formActualState}
                 onChange={handleChange}
                 ></input>
-               
+           
+            
                 <button className={styles.btn}
                 onClick={() => handleButtonClick()}
                 type="submit">BUSCAR PAÍS!
@@ -58,6 +61,7 @@ function SearchBar({country, getCountryByName}) {
                 onClose={handleCountryNameButtonClose}
                 countryNameButtonClose={countryNameButtonClose}
                 /> : null}
+                
                
             </form>
         </div>
