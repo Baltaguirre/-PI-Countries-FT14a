@@ -16,10 +16,8 @@ function Home({ countries, getCountries, getAllActivities }) {
 
     return (
         <div className={styles.container}>
-            <div >
-                <Nav />
-            </div>
-            <CountriesCards countries={countries} />
+          <Nav />
+           <CountriesCards  countries={countries} />
         </div>
     )
 

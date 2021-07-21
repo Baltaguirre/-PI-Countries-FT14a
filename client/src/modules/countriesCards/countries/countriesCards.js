@@ -27,26 +27,24 @@ function CountriesCards({ countries }) {
 
     return (
         <>
-          
-            <div>
-                <div className={styles.searchContainer}>
-                <button  className={styles.btn} onClick={() => showPages(currentPage > 1 ?
-                    currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
-                <div>
-                    <Link to={"/createactivity"}>
-                        <button className={styles.btn}>crear actividad</button>
-                    </Link>
-                </div>
-                
 
-                <button className={styles.btn} onClick={() => showPages(currentPage < pages ?
-                    currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
-            </div>
-            </div>
+            <div className={styles.wrapper}>
+                <div className={styles.searchContainer}>
+                    <button className={styles.btn} onClick={() => showPages(currentPage > 1 ?
+                        currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
+                    <div>
+                        <Link to={"/createactivity"}>
+                            <button className={styles.btn}>crear actividad</button>
+                        </Link>
+                    </div>
+                    <button className={styles.btn} onClick={() => showPages(currentPage < pages ?
+                        currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
+                </div>
+            
             <div className={styles.container}>
                 {actualStateCountries && actualStateCountries.map((country, i) => (
 
-                    <div className={styles.countryCard} >
+                    
 
                         <CountryCard
                             key={country.id}
@@ -56,9 +54,10 @@ function CountriesCards({ countries }) {
                             flag={country.flag}
                             continent={country.continent}
                         />
-                    </div>
+                   
 
                 ))}
+            </div>
             </div>
         </>
     )

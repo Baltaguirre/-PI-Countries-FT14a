@@ -1,25 +1,25 @@
 .countryCard{
 	
     margin: 30px auto;
-	margin-top: 10px;
-    margin-left: 0px;
-    width: 20%;
-	height: 30%;
+	margin-top: 0px;
+    margin-left: -19px;
+    width: 170px;
+	height: 200px;
 	border-radius: 10px;
     box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
 	transition: 0.8s;
-	background-color:rgba(221, 208, 208, 0.5);
+	background-color:rgba(225, 229, 243, 0.555);
     display: flex;
-	align-items:center;
-	justify-content: space-between;
+	align-items:flex-end;
+	justify-content: space-around;
 	flex-direction:row;
 	flex-wrap: wrap;
-   
+	
 }
 
 .countryCard img {
-	width: 100px;
-	height:90px;
+	width: 90px;
+	height:50px;
 	
 }
 
@@ -34,15 +34,19 @@
 	position:fixed;
 }
 
-.card h3{
+/*  .countryCard h3{
 font-family: 'Courier New', Courier, monospace;
+margin-left: 20px;
+margin-top:-25px;
+
 }
-.card p{
+.countryCard p{
 	font-size: 12px;
-	margin-left: 0px;
-	display: flex;
-	align-items:flex-end;
-	justify-content: space-around;
+	margin-left: 25%;
+	margin-top: 15%;
+	
+} */
+.wrapper{
+	display:flex;
 	flex-direction:row;
-	flex-wrap: wrap;
 }

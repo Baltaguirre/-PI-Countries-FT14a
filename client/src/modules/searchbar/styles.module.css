@@ -6,6 +6,7 @@
 }
 
 .searchCountry{
+    margin-top:3px;
     width: 200px;
     height: 30px;
     background: #dee2eb;
@@ -20,6 +21,7 @@
 }
 
 .btn{
+    margin-top: 0px;
     width: 130px;
     height: 30px;
     background-color:rgba(221, 208, 208, 0.5);

@@ -1,7 +1,14 @@
 .container{
    
-	background-image:url('../../img/home-travel1.jpg');
+	background-image:url('../../img/1593975243836.jfif');
+	background-position:fixed;
 	background-size:cover;
-    background-repeat:round;
-    
+    background-repeat:no-repeat;
+	width:100%;
+    min-width: 10%;
+	min-height: 100vh;
+	
+	
+	
 }
+
