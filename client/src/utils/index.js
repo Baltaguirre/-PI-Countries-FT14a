@@ -48,7 +48,9 @@ if (criteria.continent){
     country.activities.filter((activity) => activity.name === criteria.activities).length)
     }
 }
+console.log(filteredCountries)
 return filteredCountries;
+
 }  
 
 export function validate(input) {

@@ -37,6 +37,7 @@
 }
 
 .searchActivity{
+    margin-top: 3px;
     width: 200px;
     height: 30px;
     background: #dee2eb;
@@ -51,6 +52,7 @@
 }
 
 .btn{
+    margin-bottom: 10px;
     width: 130px;
     height: 30px;
     background-color:rgba(221, 208, 208, 0.5);
@@ -64,19 +66,21 @@
 }
 
 .activityName{
-    
-	margin-top: 10px;
-    margin-left: 40px;
-    width: 55%;
-	height: 35%;
+    margin: 30px auto;
+	margin-top: 1px;
+    margin-left: -400px;
+    width: 15%;
+	height: 370px;
 	border-radius: 10px;
     box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
 	transition: 0.8s;
-	background-color:rgba(182, 153, 153, 0.5);
-   display: flex;
-   flex-direction: column ;
+	background-color:rgba(15, 8, 54, 0.932);
+   color:white;
+    display: flex;
+   flex-direction: column; 
    align-items: center;
    justify-content: space-around;
+   position:fixed;
 }
 
 .btnHome{

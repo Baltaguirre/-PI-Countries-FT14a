@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getCountryDetail } from '../../../redux/actions';
 import styles from './styles.module.css'
+import { Link } from 'react-router-dom'
 
 function CountryDetail({ match, country, getCountryId }) {
 
@@ -12,6 +13,7 @@ function CountryDetail({ match, country, getCountryId }) {
 
     return (
         <div className={styles.container}>
+        <Link to={'/home'} className={styles.btnHome}>Home </Link>
         <div className={styles.countryCard}>
             <div>
                 <h1>{country.name} </h1>

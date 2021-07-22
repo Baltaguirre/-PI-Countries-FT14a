@@ -1,16 +1,15 @@
 .navBar{
     border-radius: 40px;
-    width: 100%;
-	background-color:rgba(91, 101, 138, 0.555);;
+    width: 1345px;
+	background-color:rgba(15, 8, 54, 0.623);/* rgba(91, 101, 138, 0.555);; */
  
 
 }
 
 .search{
-    margin-left:110px;
-    margin-right:50px;
+    margin-left:15px;
     margin-top: 10px;
-    width: 1350px;
+    width: 1310px;
     display:flex;
     flex-direction:row;
     align-items:center;
@@ -18,9 +17,21 @@
     justify-content:space-between;
 }
 
+.searchActivity{
+    margin-left:120px;
+    margin-right:12px;
+    margin-top: 0px;
+    width: 540px;
+    display:flex;
+    flex-direction:row-reverse;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
 .filters{
-    width: 1530px;
-    margin-left:70px;
+    width: 1230px;
+    margin-left:30px;
     margin-right:50px;
     display:flex;
     flex-direction:row;

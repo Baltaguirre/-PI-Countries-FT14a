@@ -68,15 +68,22 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
 
 } 
 
- 
+ function onCLickSubmit(){
+   if(!input.name || !input.dificulty || !input.duration || !input.countries || !input.season ) {
+     alert('Debes completar todos los campos!')
+   } else{
+     alert('Actividad creada con éxito!')
+   }
+  }
+       
+    
+  
 
   //render
   return (
     <div>
       <div className={styles.container}>
-    <Link to={'/home'} className={styles.btnHome}>Home </Link>
-     {/* <button  className={styles.btnHome}><Link to={'/home'}>Home </Link></button> */}
-   
+    <Link to={'/home'} className={styles.btnHome}>Home </Link>  
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.elements}>
        
@@ -153,8 +160,10 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
         value={input.countries}
         onChange={handleInputChange}
         placeholder="País" />
-
-      <input className={styles.btnCrear} onClick={() => alert('Actividad creada con éxito')} type="submit" value="Crear Actividad Turística" />
+         {errors.countries && (
+          <p className="danger">{errors.countries}</p>
+        )}
+      <input className={styles.btnCrear} onClick={onCLickSubmit} type="submit" value="Crear Actividad Turística" />
 
     </form>
     </div>

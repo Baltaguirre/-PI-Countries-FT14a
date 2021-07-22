@@ -5,74 +5,73 @@ import { connect } from 'react-redux';
 import styles from './styles.module.css'
 import CountryName from '../countriesCards/name/countryName'
 
-function SearchBar({country, getCountryByName}) {
-    const[formActualState, setFormActualState] = useState('')
+
+function SearchBar({ country, getCountryByName }) {
+    const [formActualState, setFormActualState] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false)
-    const[countryNameButtonClose, setCountryNameButtonClose] = useState(true)
+    const [countryNameButtonClose, setCountryNameButtonClose] = useState(true)
 
 
-    function handleCountryNameButtonClose(){
+    function handleCountryNameButtonClose() {
         setCountryNameButtonClose(false)
     }
-   
+
     function handleButtonClick() {
+        if(!formActualState){
+           return alert('debes introducir un país!')
+        }
         setButtonClicked(true)
         setCountryNameButtonClose(true)
-   }
-    function handleChange(event){
+
+    }
+    function handleChange(event) {
         setFormActualState(event.target.value)
     }
 
-    function handleSubmit(event){
-        
+    function handleSubmit(event) {
+
         getCountryByName(formActualState)
         event.preventDefault()
-       
-    
-    
-    
+
+
+
+
     }
-        
-      
+
+
     return (
-    
+
         <div>
-           
-            <form  onSubmit={handleSubmit}>
-            
+            <form onSubmit={handleSubmit}>
                 <input className={styles.searchCountry}
-                type="text"
-                placeholder="Name (ex: Argentina, Brazil...)"
-                value={formActualState}
-                onChange={handleChange}
+                    type="text"
+                    placeholder="Name (ex: Argentina, Brazil...)"
+                    value={formActualState}
+                    onChange={handleChange}
                 ></input>
-           
-            
                 <button className={styles.btn}
-                onClick={() => handleButtonClick()}
-                type="submit">BUSCAR PAÍS!
+                    onClick={() => handleButtonClick()}
+                    type="submit">BUSCAR PAÍS!
                 </button>
                 {buttonClicked ? <CountryName
-                name={country.name}
-                id={country.id}
-                flag={country.flag}
-                population={country.population}
-                continent={country.continent}
-                onClose={handleCountryNameButtonClose}
-                countryNameButtonClose={countryNameButtonClose}
+                    name={country.name}
+                    id={country.id}
+                    flag={country.flag}
+                    population={country.population}
+                    continent={country.continent}
+                    onClose={handleCountryNameButtonClose}
+                    countryNameButtonClose={countryNameButtonClose}
                 /> : null}
-                
-               
             </form>
         </div>
-    
-        
+
+
     )
 }
 
 
 const mapStateToProps = (state) => {
-    return{
+    return {
         country: state.country,
     }
 }
@@ -81,6 +80,7 @@ const mapDispatchToProps = (dispatch) => {
         getCountryByName: name => {
             dispatch(getCountryByName(name))
         }
+
     }
 }
 

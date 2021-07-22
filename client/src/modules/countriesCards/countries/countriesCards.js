@@ -9,6 +9,7 @@ function CountriesCards({ countries }) {
 
     const countriesPerPage = 10
     const pages = Math.ceil(countries.length / countriesPerPage)
+    
     const [currentPage, setCurrentPage] = useState(1)
 
     const showPages = (pageNum) => {
@@ -31,14 +32,14 @@ function CountriesCards({ countries }) {
             <div className={styles.wrapper}>
                 <div className={styles.searchContainer}>
                     <button className={styles.btn} onClick={() => showPages(currentPage > 1 ?
-                        currentPage - 1 : currentPage)}>{`<Anteriores 10 Países`}</button>
+                        currentPage - 1 : currentPage)}>{'☚'}</button>
                     <div>
                         <Link to={"/createactivity"}>
-                            <button className={styles.btn}>crear actividad</button>
+                            <button className={styles.btnActivity}>crear actividad</button>
                         </Link>
                     </div>
                     <button className={styles.btn} onClick={() => showPages(currentPage < pages ?
-                        currentPage + 1 : currentPage)}>{`Próximos 10 Países>`}</button>
+                        currentPage + 1 : currentPage)}>{`☛`}</button>
                 </div>
             
             <div className={styles.container}>

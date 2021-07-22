@@ -12,7 +12,7 @@ export const FILTER_COUNTRIES = 'FILTER_COUNTRIES';
 
 
 export function getCountries() {
-    return function (dispatch) {
+    return async function (dispatch) {
         return axios.get(COUNTRIES_URL)
             .then((response) => {
                 dispatch({
@@ -24,7 +24,7 @@ export function getCountries() {
 }
 
 export function getCountryByName(name) {
-    return function (dispatch) {
+    return async function (dispatch) {
         return axios.get(`http://localhost:3001/countries?name=${name}`)
             .then(response => {
                 dispatch({
@@ -36,10 +36,9 @@ export function getCountryByName(name) {
 }
 
 export function getCountryDetail(id) {
-    return function (dispatch) {
+    return async function (dispatch) {
         return axios.get(`http://localhost:3001/countries/${id}`)
             .then((response) => {
-
                 dispatch({
                     type: GET_COUNTRY_DETAIL,
                     payload: response.data
@@ -49,7 +48,7 @@ export function getCountryDetail(id) {
 }
 
 export function getActivity(name) {
-    return function (dispatch) {
+    return async function (dispatch) {
         return axios.get(`http://localhost:3001/activities/${name}`)
             .then((response) => {
                 dispatch({
@@ -60,7 +59,7 @@ export function getActivity(name) {
     }
 }
 export function getAllActivities() {
-    return function (dispatch) {
+    return async function (dispatch) {
         return axios.get(`http://localhost:3001/activities/`)
             .then((response) => {
                console.log(response)
@@ -72,7 +71,7 @@ export function getAllActivities() {
     }
 }
 export function postActivity(activity) {
-    return function (dispatch) {
+    return async function (dispatch) {
         return axios.post(`http://localhost:3001/activities`, activity)
             .then((response) => {
                 dispatch({
