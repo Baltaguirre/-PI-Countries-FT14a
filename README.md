@@ -1,7 +1,18 @@
 <p align='left'>
     <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
 </p>
-
+<p align='left'>
+   <img src="https://i.ibb.co/yV67jDY/PI-Countries1-1.jpg" alt="PI-Countries1-1" border="0">
+</p>
+<p align='left'>
+   <img src="https://i.ibb.co/8D7JvGs/PI-Countries1-3.jpg" alt="PI-Countries1-1" border="0">
+</p>
+<p align='left'>
+   <img src="https://i.ibb.co/wBdHqCP/PI-Countries1-0.jpg" alt="PI-Countries1-1" border="0">
+</p>
+<p align='left'>
+   <img src="https://i.ibb.co/FqrP0Vz/PI-Countries1-2.jpg" alt="PI-Countries1-1" border="0">
+</p>
 # Individual Project - Henry Countries
 
 <p align="left">
