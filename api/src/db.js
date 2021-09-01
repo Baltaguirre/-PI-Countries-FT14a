@@ -41,21 +41,9 @@ Country.belongsToMany(Activity, { through: 'CountryActivity' });
 Activity.belongsToMany(Country, { through: 'CountryActivity' });
 
 
-const bulkCreateCountry = () => {
-  return axios.get(ALL_COUNTRY_URL)
-    .then((result) => {
-      let response = result.data.map(el => {
-        return countryProcessor(el)
-      })
-      return Country.bulkCreate(response)
-    })
-}
-
-
-
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,    // para importart la conexión { conn } = require('./db.js');
-  bulkCreateCountry
+  
 };

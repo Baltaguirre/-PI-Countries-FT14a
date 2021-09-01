@@ -9,9 +9,11 @@ class CountryModel extends ModelCrud {
     constructor(model) {
         super(model);
     }
-    getAll = (req, res, next) => {             //traigo todos los paises de la api y los guardo en db
+    //traigo todos los paises de la db
+    getAll = (req, res, next) => {   
+        //de paso hago la ruta del name         
         if (req.query.name) {
-            return this.getName(req, res, next)
+            return this.getName(req, res, next)  
         }
         this.model.findAll({include: Activity})
             .then((result) => {
@@ -31,18 +33,19 @@ class CountryModel extends ModelCrud {
 
     getId = (req, res, next) => {
         const id = req.params.id;
-        return this.model.findByPk(id)
+        return this.model.findByPk(id, {include: Activity})
             .then((result) => res.send(result))
             .catch((error) => next(error));
 
     };
     getName = (req, res, next) => {
-
+        //hago que matchee mayúsculas y minúsculas
         const { name } = req.query
-        let procesName =  name.toUpperCase()
+        let capitalizeFirst =  name.charAt(0).toUpperCase()
+        let finalName = capitalizeFirst + name.slice(1)
         return this.model.findOne({
             where : {
-                 name
+                 name : finalName
              },
           })
          .then((result) => {

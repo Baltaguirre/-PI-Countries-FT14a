@@ -24,9 +24,20 @@ function activityProcessor(element){
         dificulty: element.dificulty
 
     };
-};
+}; 
+//lleno la db con todos los paises de la api 
+const bulkCreateCountry = () => {
+    return axios.get(ALL_COUNTRY_URL)
+      .then((result) => {
+        let response = result.data.map(el => {
+          return countryProcessor(el)
+        })
+        return Country.bulkCreate(response)
+      })
+  }
 
 module.exports = {
     countryProcessor, 
-    activityProcessor
+    activityProcessor,
+    bulkCreateCountry
 }

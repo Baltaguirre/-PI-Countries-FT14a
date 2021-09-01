@@ -23,7 +23,6 @@ class ActivityModel extends ModelCrud {
             )
                 .then(async (activityCreated) => {
                     await activityCreated.addCountries(req.body.countries)
-                    console.log(activityCreated)
                     return activityCreated
                 })
 
@@ -34,14 +33,29 @@ class ActivityModel extends ModelCrud {
 
     getActivities = (req, res, next) => {
         const { name } = req.params
-        const upName = name.replace(/\b\w/g, l => l.toUpperCase())
+        let capitalizeFirst =  name.charAt(0).toUpperCase()
+        let finalName = capitalizeFirst + name.slice(1)
         return this.model.findOne({
-            where: { name },
+            where: { 
+                name 
+            },
             include: Country
         })
             .then((result) => {
                 if (!result) {
                     res.status(404).send('Actividad no encontrada')
+                } else {
+                    return res.status(200).send(result)
+                }
+            })
+            .catch((error => next(error)))
+    }; 
+
+    getAllActivities = (req, res, next) => {
+       this.model.findAll({include: Country})
+            .then((result) => {
+                if (!result) {
+                    res.status(404).send('Actividades no encontradas')
                 } else {
                     return res.status(200).send(result)
                 }

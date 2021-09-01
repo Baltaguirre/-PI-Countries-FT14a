@@ -18,28 +18,16 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn, bulkCreateCountry } = require('./src/db.js');
+const { conn } = require('./src/db.js');
+const{ bulkCreateCountry } = require('./src/utils')
 const force = false;
 
-
-
-// Syncing all the models at once.
-/*  conn.sync({ force }).then(() => {
-  
-  bulkCreateCountry().then(() => { 
-   
-    server.listen(3001, () => {
-      console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
-    });
-  })
-});  */
-
- const initServer = () => {
+const initServer = () => {
 	server.listen(3001, () => {
 	      console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
 	});
 }
-
+//con bulkCreateCountry cargo la tabla countries con lo que me manda la api antes de inicializar el server
 conn.sync({ force }).then(() => {
   if (force){
   	bulkCreateCountry().then(() => { 
