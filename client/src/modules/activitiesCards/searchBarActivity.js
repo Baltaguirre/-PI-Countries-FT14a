@@ -17,18 +17,20 @@ function SearchBarActivity({ activity, getActivity }) {
 
     function handleButtonClick() {
         if(!formActualState){
-            return alert('Debes introducir una actividad turística!')
-         }
+            return alert('Ups! No existe esa Actividad Turística  :(')
+         } else {
         setButtonClicked(true)
         setActivityNameButtonClose(true)
+         }
     }
     function handleChange(event) {
         setFormActualState(event.target.value)
     }
 
     function handleSubmit(event) {
-        getActivity(formActualState)
         event.preventDefault()
+        getActivity(formActualState)
+        setFormActualState('')
     }
 
 
@@ -39,7 +41,7 @@ function SearchBarActivity({ activity, getActivity }) {
             <form onSubmit={handleSubmit}>
                 <input className={styles.searchActivity}
                     type="text"
-                    placeholder="Name (ex: Ski, Rappel...)"
+                    placeholder="Nombre (ej: Ski, Rappel...)"
                     value={formActualState}
                     onChange={handleChange}
                 ></input>
@@ -47,7 +49,7 @@ function SearchBarActivity({ activity, getActivity }) {
                     onClick={() => handleButtonClick()}
                     type="submit">BUSCAR ACTIVIDAD!
                 </button>
-                {buttonClicked ? <ActivityName
+                {buttonClicked && activity.name ? <ActivityName
                     name={activity.name}
                     duration={activity.duration}
                     dificulty={activity.dificulty}

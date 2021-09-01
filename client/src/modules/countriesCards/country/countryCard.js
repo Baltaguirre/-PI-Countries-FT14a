@@ -10,9 +10,9 @@ export default function CountryCard({name, id, flag, population, continent}) {
                 <img  src={flag} alt={`Bandera de ${name}`} />
                 </Link>
                 <div >
-                    <h3>{name}</h3>
+                    <h5>{name}</h5>
                     <p>Continente: {continent}</p>
-                    
+                    <p>Población: {population}</p>
                 </div>
         </div>
         </div>

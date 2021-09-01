@@ -9,14 +9,14 @@ export default function CountryName({name, id, flag, population, continent, onCl
             {countryNameButtonClose ?
             
             <div className={styles.countryName}>
-                <button onClick={onClose}>X</button>
+                <button className={styles.closeBtn} onClick={onClose}>X</button>
             <Link to={`/detail/${id}`}>
                 <img src={flag} alt={`Bandera de ${name}`}/>
                 </Link>
                 <div>
                     <h1>{name}</h1>
-                    <p>Region: {continent}</p>
-                    <p>Population: {population}</p>
+                    <p>Continente: {continent}</p>
+                    <p>Población: {population}</p>
                 </div>
                 </div>
                 : null}

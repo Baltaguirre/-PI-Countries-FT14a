@@ -23,14 +23,15 @@
 .btn{
     
     width: 130px;
-    height: 30px;
-    margin-bottom: 10px;
+    height: 35px;
+    margin-bottom: 1px;
     background-color:rgba(221, 208, 208, 0.5);
     border: 15px;
     font-size: 10pt;
-    color: rgba(78, 79, 151, 0.5);
-    padding-left: 45px;
+    color: rgba(255, 255, 255, 0.925);
+    padding-left: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 15px;
+    cursor:pointer;
 }

@@ -1,7 +1,7 @@
 .countryCard{
 	
     margin: 30px auto;
-	margin-top: 130px;
+	margin-top: 100px;
     margin-left: 600px;
     width: 30%;
 	height: 60%;
@@ -37,8 +37,7 @@
 .btnHome{
     font-family:monospace;
     text-decoration: none;
-    
-	margin-left:725px;
+	margin-left:730px;
     width: 130px;
     height: 40px;
     background-color:rgba(196, 178, 178, 0.404);

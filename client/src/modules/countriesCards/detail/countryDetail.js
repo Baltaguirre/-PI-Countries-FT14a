@@ -16,19 +16,19 @@ function CountryDetail({ match, country, getCountryId }) {
         <Link to={'/home'} className={styles.btnHome}>Home </Link>
         <div className={styles.countryCard}>
             <div>
-                <h1>{country.name} </h1>
-                <h2>Código de país: {country.id}</h2>
+                <h2>{country.name} </h2>
+                <h4>Código de país: {country.id}</h4>
             </div>
             <div>
                 <img src={country.flag} alt="Imagen de bandera rota" />
             </div>
             <div className={styles.info}>
             <p>Capital: {country.capital}</p>
-            <p>Region: {country.continent}</p>
-            <p>Subregion: {country.subregion}</p>
+            <p>Continente: {country.continent}</p>
+            <p>Subcontinente: {country.subregion}</p>
             <p>Area: {country.area} km²</p>
-            <p>Population: {country.population}</p>
-            <p>Activities: {country.activities ? country.activities.map((activity) => '«' + activity.name + '» ' ) : null}
+            <p>Población: {country.population}</p>
+            <p>Actividades Turísticas: {country.activities ? country.activities.map((activity) => '«' + activity.name + '» ' ) : null}
                 
             </p>
             </div>
@@ -39,7 +39,7 @@ function CountryDetail({ match, country, getCountryId }) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.country)
+    
     return {
         country: state.country,
     }

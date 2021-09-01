@@ -31,6 +31,15 @@
             a.continent < b.continent ? 1 : a.continent > b.continent ? -1 : 0),
         )
 
+        if (criteria.area === 'Ascendent')
+        orderedCountries = orderTarget.sort((a, b) => (
+            a.area > b.area ? 1 : a.area < b.area ? -1 : 0),
+        )
+
+    if (criteria.area === 'Descendent')
+        orderedCountries = orderTarget.sort((a, b) => (
+            a.area < b.area ? 1 : a.area > b.area ? -1 : 0),
+        )
 
     return orderedCountries;
 
@@ -42,13 +51,14 @@ if (criteria.continent){
   filteredCountries = orderTarget.filter((countries) => 
     countries.continent.includes(criteria.continent)
   )
-} else {
+}  
   if (criteria.activities){
     filteredCountries = orderTarget.filter((country) =>
     country.activities.filter((activity) => activity.name === criteria.activities).length)
     }
-}
-console.log(filteredCountries)
+    
+
+
 return filteredCountries;
 
 }  

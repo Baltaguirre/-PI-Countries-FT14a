@@ -76,9 +76,6 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
    }
   }
        
-    
-  
-
   //render
   return (
     <div>
@@ -94,7 +91,7 @@ function ActivityPost({ countries, activityPost, getAllCountries }) {
           onChange={handleInputChange}
           placeholder="Actividad" />
         {errors.name && (
-          <p className="danger">{errors.name}</p>
+          <p >{errors.name}</p>
         )}
       </div>
       <div>

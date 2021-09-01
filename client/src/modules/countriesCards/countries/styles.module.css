@@ -16,11 +16,11 @@
     margin-left:60px;
 	width: 130px;
     height: 45px;
-    background-color:rgba(58, 55, 230, 0.527);
+    background-color:rgba(15, 8, 54, 0.623);;
     border: 5px;
 	font-size: 30pt;
     float: left;
-    color: rgba(7, 7, 10, 0.5);
+    color: rgba(255, 255, 255, 0.925);
     padding-left: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -29,20 +29,22 @@
 	flex-direction:column;
 	justify-content:space-around;
 	align-items:center;
+	cursor: pointer;
 }
 .btnActivity{
 	margin-left:60px;
 	width: 130px;
     height: 30px;
-    background-color:rgba(58, 55, 230, 0.527);
+    background-color:rgba(15, 8, 54, 0.623);;
     border: 5px;
 	font-size: 10pt;
     float: left;
-    color: rgba(7, 7, 10, 0.5);
+    color: rgba(255, 255, 255, 0.925);
     padding-left: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 15px;
+	cursor: pointer;
 }
 .searchContainer{
 	margin-top: 20px;

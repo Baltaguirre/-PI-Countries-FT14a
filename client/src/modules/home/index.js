@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getCountries,getAllActivities } from '../../redux/actions'
+import { getCountries, getAllActivities } from '../../redux/actions'
 import CountriesCards from '../countriesCards/countries/countriesCards.js'
-import SearchBar from '../searchbar'
-import SearchBarActivity from '../activitiesCards/searchBarActivity'
 import styles from './styles.module.css'
 import Nav from '../navBar/index.js'
 
-function Home({ countries, getCountries, getAllActivities, onClose }) {
+function Home({ countries, getCountries, getAllActivities }) {
 
 
     useEffect(() => {
@@ -17,11 +15,10 @@ function Home({ countries, getCountries, getAllActivities, onClose }) {
 
     return (
         <div className={styles.container}>
-          <Nav />
-         
-      <div>
-           <CountriesCards  countries={countries} />
-        </div>
+            <Nav />
+            <div>
+                <CountriesCards countries={countries} />
+            </div>
         </div>
     )
 
@@ -29,7 +26,7 @@ function Home({ countries, getCountries, getAllActivities, onClose }) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.countries)
+    
     return {
         countries: state.countries
     }

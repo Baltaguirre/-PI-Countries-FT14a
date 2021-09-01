@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { getCountryByName } from '../../redux/actions.js';
+import { getCountryByName, cleanCountry } from '../../redux/actions.js';
 import { connect } from 'react-redux';
 import styles from './styles.module.css'
 import CountryName from '../countriesCards/name/countryName'
 
 
-function SearchBar({ country, getCountryByName }) {
+function SearchBar({ country, getCountryByName, cleanCountry }) {
     const [formActualState, setFormActualState] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false)
     const [countryNameButtonClose, setCountryNameButtonClose] = useState(true)
@@ -18,7 +18,7 @@ function SearchBar({ country, getCountryByName }) {
 
     function handleButtonClick() {
         if(!formActualState){
-           return alert('debes introducir un país!')
+           return alert('Ups! Debes ingresar el nombre de un país!')
         }
         setButtonClicked(true)
         setCountryNameButtonClose(true)
@@ -29,11 +29,11 @@ function SearchBar({ country, getCountryByName }) {
     }
 
     function handleSubmit(event) {
-
+        
         getCountryByName(formActualState)
         event.preventDefault()
-
-
+        setFormActualState('')
+        cleanCountry()
 
 
     }
@@ -53,7 +53,7 @@ function SearchBar({ country, getCountryByName }) {
                     onClick={() => handleButtonClick()}
                     type="submit">BUSCAR PAÍS!
                 </button>
-                {buttonClicked ? <CountryName
+                { buttonClicked && country.name ?  <CountryName
                     name={country.name}
                     id={country.id}
                     flag={country.flag}
@@ -61,7 +61,7 @@ function SearchBar({ country, getCountryByName }) {
                     continent={country.continent}
                     onClose={handleCountryNameButtonClose}
                     countryNameButtonClose={countryNameButtonClose}
-                /> : null}
+                /> : null }
             </form>
         </div>
 
@@ -79,7 +79,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getCountryByName: name => {
             dispatch(getCountryByName(name))
-        }
+        },
+        cleanCountry: () => dispatch(cleanCountry())
 
     }
 }

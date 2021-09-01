@@ -8,31 +8,51 @@ function CountriesOrderFilters({
     countriesOrder,
     orderCountries2,
     filterCountries2,
-    activities }) {
+    activities,
+getAllCountries }) {
 
     function handleName(event) {
+
+        if (event.target.value === 'Name') {
+            return getAllCountries();
+        }
         orderCountries2(countriesOrder, { name: event.target.value })
 
     }
 
     function handlePupulation(event) {
+        if (event.target.value === 'Population') {
+            return getAllCountries();
+        }
         orderCountries2(countriesOrder, { population: event.target.value })
 
     }
 
     function handleContinent(event) {
+        if (event.target.value === 'Continent') {
+            return getAllCountries();
+        }
         orderCountries2(countriesOrder, { continent: event.target.value })
-        
+
     }
 
     function handleFilterCountries(event) {
+        if (event.target.value === 'continentFilter') {
+            return getAllCountries();
+        }
         filterCountries2(countriesOrder, { continent: event.target.value })
 
     }
+
     function handleFilterActivities(event) {
+        if (event.target.value === 'activityFilter') {
+            return getAllCountries();
+        }
         filterCountries2(countriesOrder, { activities: event.target.value })
 
     }
+
+    
 
     return (
         <div className={styles.filters}>
@@ -40,8 +60,8 @@ function CountriesOrderFilters({
 
                 <select className={styles.select} onChange={handleName}>
                     <option label='Ordenar por Nombre' value='Name'></option>
-                    <option value='Ascendent'>Ascendent</option>
-                    <option value='Descendent'>Descendent</option>
+                    <option value='Ascendent'>Ascendente</option>
+                    <option value='Descendent'>Descendente</option>
                 </select>
 
             </div>
@@ -49,8 +69,8 @@ function CountriesOrderFilters({
 
                 <select className={styles.select} onChange={handlePupulation}>
                     <option label='Ordenar por Poblacion' value='Population'></option>
-                    <option value='Ascendent' label='Ascendent'></option>
-                    <option value='Descendent' label='Descendent'></option>
+                    <option value='Ascendent' >Ascendente</option>
+                    <option value='Descendent' >Descendente</option>
                 </select>
 
             </div>
@@ -91,13 +111,10 @@ function CountriesOrderFilters({
 
 
 const mapStateToProps = ((state) => {
-    console.log(state.activities)
-    console.log(state.countriesOrder)
+
     return {
         countriesOrder: state.countriesOrder,
-        activities: state.activities,
-        countries:state.countries
-
+        activities: state.activities
     }
 })
 

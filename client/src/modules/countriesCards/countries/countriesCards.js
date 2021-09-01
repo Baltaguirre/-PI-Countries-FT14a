@@ -35,7 +35,7 @@ function CountriesCards({ countries }) {
                         currentPage - 1 : currentPage)}>{'☚'}</button>
                     <div>
                         <Link to={"/createactivity"}>
-                            <button className={styles.btnActivity}>crear actividad</button>
+                            <button className={styles.btnActivity}>Crear Actividad Turística</button>
                         </Link>
                     </div>
                     <button className={styles.btn} onClick={() => showPages(currentPage < pages ?

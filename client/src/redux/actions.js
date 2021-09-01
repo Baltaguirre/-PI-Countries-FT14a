@@ -9,7 +9,7 @@ export const GET_ALL_ACTIVITIES = 'GET_ALL_ACTIVITIES';
 export const ORDER_COUNTRIES = 'ORDER_COUNTRIES';
 export const POST_ACTIVITY = 'POST_ACTIVITY';
 export const FILTER_COUNTRIES = 'FILTER_COUNTRIES';
-
+export const CLEAN_COUNTRY = 'CLEAN_COUNTRY';
 
 export function getCountries() {
     return async function (dispatch) {
@@ -25,13 +25,24 @@ export function getCountries() {
 
 export function getCountryByName(name) {
     return async function (dispatch) {
-        return axios.get(`http://localhost:3001/countries?name=${name}`)
+      try{  return axios.get(`http://localhost:3001/countries?name=${name}`)
             .then(response => {
+                console.log(response)
                 dispatch({
                     type: GET_COUNTRIES_BY_NAME,
                     payload: response.data,
                 })
             })
+        } catch (err) { console.log(err) }
+    }
+}
+
+export function cleanCountry(){
+    return function(dispatch){
+        dispatch({
+            type: CLEAN_COUNTRY,
+            payload: ''
+        })
     }
 }
 
@@ -62,7 +73,6 @@ export function getAllActivities() {
     return async function (dispatch) {
         return axios.get(`http://localhost:3001/activities/`)
             .then((response) => {
-               console.log(response)
                 dispatch({
                     type: GET_ALL_ACTIVITIES,
                     payload: response.data

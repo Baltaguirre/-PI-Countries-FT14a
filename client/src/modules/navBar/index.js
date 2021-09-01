@@ -5,15 +5,15 @@ import CountriesOrderFilters from "../filters/countriesOrderFilters";
 import styles from './styles.module.css'
 
 
-function Nav({ onSearch }) {
+function Nav() {
   return (
     <nav className={styles.navBar}>
       <div className={styles.filters}>
         <CountriesOrderFilters />
       </div>
       <div className={styles.search}>
-        <SearchBar onSearch={onSearch} />
-        <SearchBarActivity onSearch={onSearch} />
+        <SearchBar  />
+        <SearchBarActivity  />
         </div>
       
 

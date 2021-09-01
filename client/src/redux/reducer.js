@@ -7,6 +7,7 @@ import {
     ORDER_COUNTRIES,
     POST_ACTIVITY,
     FILTER_COUNTRIES,
+    CLEAN_COUNTRY
 } from './actions.js';
 
 const initialState = {
@@ -27,6 +28,11 @@ const reducer = (state = initialState, action) => {
                 countriesOrder: action.payload,
             };
         case GET_COUNTRIES_BY_NAME:
+            return {
+                ...state,
+                country: action.payload,
+            };
+            case CLEAN_COUNTRY:
             return {
                 ...state,
                 country: action.payload,

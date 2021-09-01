@@ -34,18 +34,12 @@
 	position:fixed;
 }
 
-/*  .countryCard h3{
+  .countryCard h3{
 font-family: 'Courier New', Courier, monospace;
-margin-left: 20px;
-margin-top:-25px;
+font-size: 25px;
 
 }
-.countryCard p{
-	font-size: 12px;
-	margin-left: 25%;
-	margin-top: 15%;
-	
-} */
+
 .wrapper{
 	display:flex;
 	flex-direction:row;

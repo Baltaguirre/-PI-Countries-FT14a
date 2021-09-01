@@ -52,24 +52,25 @@
 }
 
 .btn{
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     width: 130px;
-    height: 30px;
+    height: 35px;
     background-color:rgba(221, 208, 208, 0.5);
     border: 15px;
     font-size: 10pt;
-    color: rgba(78, 79, 151, 0.5);
-    padding-left: 45px;
+    color: rgba(255, 255, 255, 0.925);
+    padding-left: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 15px;
+    cursor:pointer;
 }
 
 .activityName{
     margin: 30px auto;
 	margin-top: 1px;
-    margin-left: -400px;
-    width: 15%;
+    margin-left: -470px;
+    width: 25%;
 	height: 370px;
 	border-radius: 10px;
     box-shadow: 5px 5px 3px 7px rgba(0,0,0,0.25), 5px 5px 3px 7px rgba(0,0,0,0.22);
@@ -81,6 +82,11 @@
    align-items: center;
    justify-content: space-around;
    position:fixed;
+}
+
+.btnClose{
+    border-radius:10px;
+	cursor: pointer;
 }
 
 .btnHome{

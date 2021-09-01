@@ -1,6 +1,6 @@
 .navBar{
-    border-radius: 40px;
-    width: 1345px;
+    border-radius: 30px;
+    width: 1367px;
 	background-color:rgba(15, 8, 54, 0.623);/* rgba(91, 101, 138, 0.555);; */
  
 
@@ -9,7 +9,7 @@
 .search{
     margin-left:15px;
     margin-top: 10px;
-    width: 1310px;
+    width: 1320px;
     display:flex;
     flex-direction:row;
     align-items:center;
@@ -17,17 +17,7 @@
     justify-content:space-between;
 }
 
-.searchActivity{
-    margin-left:120px;
-    margin-right:12px;
-    margin-top: 0px;
-    width: 540px;
-    display:flex;
-    flex-direction:row-reverse;
-    align-items:center;
-    flex-wrap:wrap;
-    justify-content:space-between;
-}
+
 
 .filters{
     width: 1230px;

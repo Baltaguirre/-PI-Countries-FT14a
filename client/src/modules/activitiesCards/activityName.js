@@ -15,7 +15,7 @@ export default function ActivityName({name, duration, dificulty, season, countri
              
              {activityNameButtonClose ?
             <div className={styles.activityName}>
-               <button onClick={onClose}>X</button>
+               <button className={styles.btnClose} onClick={onClose}>X</button>
                   <h1>{name}</h1>
                     <p>Duración: {duration}</p>
                     <p>Dificultad: {dificulty}</p>
