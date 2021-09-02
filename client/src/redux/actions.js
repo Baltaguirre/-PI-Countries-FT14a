@@ -13,7 +13,7 @@ export const CLEAN_COUNTRY = 'CLEAN_COUNTRY';
 
 export function getCountries() {
     return async function (dispatch) {
-        return axios.get(`/countries`)
+        return axios.get(`/countries/`)
             .then((response) => {
                 dispatch({
                     type: GET_COUNTRIES,
