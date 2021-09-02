@@ -20,7 +20,7 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const{ bulkCreateCountry } = require('./src/utils')
-const force = false;
+const force = true;
 
 
 const initServer = () => {
