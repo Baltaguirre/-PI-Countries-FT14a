@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const activitiesController = require('../controllers/activities');
+const activitiesController = require('../Controllers/activities');
 
 
 
