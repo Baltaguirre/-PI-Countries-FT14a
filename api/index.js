@@ -23,7 +23,7 @@ const{ bulkCreateCountry } = require('./src/utils')
 const force = false;
 
 const initServer = () => {
-	server.listen(3001, () => {
+	server.listen(process.env.PORT, () => {
 	      console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
 	});
 }
