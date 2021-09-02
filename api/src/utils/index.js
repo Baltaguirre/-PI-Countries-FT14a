@@ -1,6 +1,6 @@
 const axios = require('axios')
 const ALL_COUNTRY_URL = require('../constants')
-
+const { Country } = require('../db')
 function countryProcessor(country) {
     return {
         name: country.name,
