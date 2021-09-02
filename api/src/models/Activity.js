@@ -1,4 +1,4 @@
-const Sequelize = require('Sequelize')
+
 const { DataTypes } = require('sequelize');
 const {v4 : uuidv4} = require('uuid')
 // Exportamos una funcion que define el modelo
