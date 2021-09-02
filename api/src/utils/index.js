@@ -28,7 +28,7 @@ function activityProcessor(element){
 }; 
 //lleno la db con todos los paises de la api 
 const bulkCreateCountry = () => {
-    return axios.get(ALL_COUNTRY_URL)
+    return axios.get('https://restcountries.eu/rest/v2/all')
       .then((result) => {
         let response = result.data.map(el => {
           return countryProcessor(el)
