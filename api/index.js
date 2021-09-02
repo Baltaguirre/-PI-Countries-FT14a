@@ -21,10 +21,10 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const{ bulkCreateCountry } = require('./src/utils')
 const force = false;
-const PORT = process.env.PORT || 3001
+
 
 const initServer = () => {
-	server.listen(PORT, () => {
+	server.listen(process.env.PORT || 3001, () => {
 	      console.log('Escuchando en puerto 3001'); // eslint-disable-line no-console
 	});
 }
